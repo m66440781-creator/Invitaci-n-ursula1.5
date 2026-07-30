@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invitación — Úrsula 1.5</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Estás invitad@</h1>
+      <p class="subtitle">Úrsula 1.5 — Una celebración mágica</p>
+    </header>
+
+    <section class="card">
+      <img id="ursula-img" src="img/ursula.png" alt="Úrsula" />
+
+      <div class="content">
+        <p class="lead">Pulsa <strong>Abrir</strong> cuando estés list@ para comenzar la sorpresa.</p>
+
+        <div class="controls">
+          <button id="open-btn" class="btn">Abrir</button>
+          <button id="music-btn" class="btn secondary">Reproducir música</button>
+        </div>
+
+        <div id="message" class="hidden">
+          <h2>¡Sorpresa!</h2>
+          <p>Gracias por acompañarnos. Que la magia empiece ✨</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <small>Diseño: Invitación Úrsula 1.5</small>
+    </footer>
+  </main>
+
+  <!-- Elementos de audio (subir los archivos a audio/) -->
+  <audio id="musica" src="audio/musica.mp3" preload="none"></audio>
+  <audio id="abrir" src="audio/abrir.mp3" preload="none"></audio>
+  <audio id="magia" src="audio/magia.mp3" preload="none"></audio>
+  <audio id="confetti" src="audio/confetti.mp3" preload="none"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
