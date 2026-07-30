@@ -1580,3 +1580,195 @@ body{
 
 }
 
+ 
+/* ================================
+        ANIMACIÓN SOBRE MÁGICO
+================================ */
+
+
+/* entrada del sobre */
+
+#sobre.entrada{
+
+    animation:
+
+    subirSobre 1.5s ease forwards;
+
+}
+
+
+
+@keyframes subirSobre{
+
+
+    from{
+
+        transform:
+        translate(-50%,100vh);
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        transform:
+        translate(-50%,-50%);
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+
+
+/* apertura de tapa */
+
+
+#sobre.abierto .tapa{
+
+
+    transform:
+
+    rotateX(180deg);
+
+
+}
+
+
+
+
+#sobre.abierto{
+
+
+    animation:none;
+
+
+}
+
+
+
+
+
+/* brillo extra */
+
+
+#sobre::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:-25px;
+
+
+    border-radius:40px;
+
+
+    background:
+
+    radial-gradient(
+    circle,
+    rgba(255,182,217,.7),
+    transparent 70%
+    );
+
+
+    z-index:-1;
+
+
+    animation:
+
+    brilloSobre 2.5s infinite alternate;
+
+
+}
+
+
+
+
+@keyframes brilloSobre{
+
+
+    from{
+
+        opacity:.4;
+
+        transform:scale(.9);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.1);
+
+    }
+
+}
+
+
+
+
+/* ================================
+        LIBRO APARICIÓN MÁGICA
+================================ */
+
+
+
+#libro.activo{
+
+
+    animation:
+
+    aparecerLibro 1s ease forwards;
+
+
+}
+
+
+
+@keyframes aparecerLibro{
+
+
+    0%{
+
+        opacity:0;
+
+        transform:
+
+        translate(-50%,-40%)
+        scale(.5)
+        rotate(-5deg);
+
+        filter:blur(8px);
+
+    }
+
+
+
+    100%{
+
+        opacity:1;
+
+        transform:
+
+        translate(-50%,-50%)
+        scale(1)
+        rotate(0);
+
+        filter:blur(0);
+
+    }
+
+
+}
