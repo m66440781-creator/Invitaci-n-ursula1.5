@@ -72,6 +72,8 @@ fresaInicio.addEventListener("click",()=>{
 
 
         bosque.classList.add("activo");
+        
+        sobre.classList.add("entrada");
 
 
         crearEscenario();
