@@ -246,7 +246,6 @@ continuar.addEventListener("click",()=>{
 
 function crearEscenario(){
 
-
     crearNubes(10);
 
     crearArboles();
@@ -255,6 +254,13 @@ function crearEscenario(){
 
     crearHongos();
 
+    crearFlores(18);
+
+    crearFresas(12);
+
+    crearMariposas(6);
+
+    crearEstrellas(40);
 
 }
 
