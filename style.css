@@ -1323,5 +1323,260 @@ body{
 
   }
 
+/* ================================
+   MAGIA DEL BOSQUE
+================================ */
 
+
+/* FLORES */
+
+.flor{
+
+    position:absolute;
+
+    top:-80px;
+
+    font-size:28px;
+
+    pointer-events:none;
+
+    z-index:10;
+
+
+    animation:
+
+    caerFlor linear infinite;
+
+}
+
+
+
+
+@keyframes caerFlor{
+
+    from{
+
+        transform:
+        translateY(-100px)
+        rotate(0deg);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+
+        opacity:.8;
+
+    }
+
+}
+
+
+
+
+/* FRESAS QUE CAEN */
+
+
+.fresaCaida{
+
+    position:absolute;
+
+    top:-100px;
+
+    font-size:26px;
+
+    pointer-events:none;
+
+    z-index:10;
+
+
+    animation:
+
+    caerFresa linear infinite;
+
+}
+
+
+
+
+@keyframes caerFresa{
+
+
+    from{
+
+        transform:
+        translateY(-100px)
+        rotate(0deg);
+
+    }
+
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(180deg);
+
+    }
+
+
+}
+
+
+
+
+
+
+/* MARIPOSAS */
+
+
+.mariposa{
+
+    position:absolute;
+
+    left:-80px;
+
+    font-size:32px;
+
+    z-index:8;
+
+    pointer-events:none;
+
+
+    animation:
+
+    volarMariposa 12s linear infinite;
+
+}
+
+
+
+
+
+@keyframes volarMariposa{
+
+
+    from{
+
+        transform:
+        translateX(-100px)
+        translateY(0);
+
+    }
+
+
+    25%{
+
+        transform:
+        translateX(25vw)
+        translateY(-40px);
+
+    }
+
+
+    50%{
+
+        transform:
+        translateX(55vw)
+        translateY(30px);
+
+    }
+
+
+    75%{
+
+        transform:
+        translateX(85vw)
+        translateY(-20px);
+
+    }
+
+
+    to{
+
+        transform:
+        translateX(120vw)
+        translateY(0);
+
+    }
+
+
+}
+
+
+
+
+
+
+/* DESTELLOS */
+
+
+.estrella{
+
+    position:absolute;
+
+    width:5px;
+
+    height:5px;
+
+    border-radius:50%;
+
+    background:white;
+
+
+    box-shadow:
+
+    0 0 10px white,
+
+    0 0 20px #ff69b4;
+
+
+    animation:
+
+    brilloEstrella 2s infinite alternate;
+
+
+    z-index:7;
+
+}
+
+
+
+
+
+@keyframes brilloEstrella{
+
+
+    from{
+
+        opacity:.2;
+
+        transform:scale(.6);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.6);
+
+    }
+
+
+}
 
