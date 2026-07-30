@@ -1,70 +1,449 @@
-// script.js — comportamiento básico para la invitación Úrsula 1.5
+// ===================================
+// INVITACIÓN ÚRSULA NAZARETH v2
+// ROSITA FRESITA
+// SCRIPT LIMPIO
+// ===================================
 
-const openBtn = document.getElementById('open-btn');
-const musicBtn = document.getElementById('music-btn');
-const message = document.getElementById('message');
 
-const audioMusica = document.getElementById('musica');
-const audioAbrir = document.getElementById('abrir');
-const audioMagia = document.getElementById('magia');
-const audioConfetti = document.getElementById('confetti');
+// ELEMENTOS
 
-let musicPlaying = false;
+const bienvenida = document.getElementById("bienvenida");
+const fresaInicio = document.getElementById("fresaInicio");
 
-musicBtn.addEventListener('click', () => {
-  if (!audioMusica) return;
-  if (!musicPlaying) {
-    audioMusica.play().catch(()=>{});
-    musicBtn.textContent = 'Pausar música';
-    musicPlaying = true;
-  } else {
-    audioMusica.pause();
-    musicBtn.textContent = 'Reproducir música';
-    musicPlaying = false;
-  }
+const bosque = document.getElementById("bosque");
+const decoracion = document.getElementById("decoracion");
+
+const sobre = document.getElementById("sobre");
+
+const libro = document.getElementById("libro");
+
+const historia = document.getElementById("historia");
+
+const continuar = document.getElementById("continuar");
+
+const invitacionFinal =
+document.getElementById("invitacionFinal");
+
+
+
+
+// TEXTO DEL CUENTO
+
+const textoHistoria = 
+"Había una vez una pequeña llamada Úrsula Nazareth... que estaba a punto de cumplir 4 añitos. Y quiere compartir este día tan especial contigo. 🍓✨";
+
+
+
+
+
+// ===================================
+// TOCAR FRESA INICIAL
+// ===================================
+
+
+fresaInicio.addEventListener("click",()=>{
+
+
+    if(typeof confetti === "function"){
+
+        confetti({
+
+            particleCount:120,
+
+            spread:90,
+
+            origin:{
+                y:.7
+            }
+
+        });
+
+    }
+
+
+
+    bienvenida.style.opacity="0";
+
+
+    setTimeout(()=>{
+
+
+        bienvenida.style.display="none";
+
+
+        bosque.classList.add("activo");
+
+
+        crearEscenario();
+
+
+
+    },1200);
+
+
+
 });
 
-openBtn.addEventListener('click', async () => {
-  // reproducir sonido de apertura
-  audioAbrir.play().catch(()=>{});
 
-  // mostrar mensaje
-  message.classList.remove('hidden');
 
-  // reproducir efecto mágico
-  setTimeout(()=>{
-    audioMagia.play().catch(()=>{});
-  }, 400);
 
-  // disparar confetti sonoro y visual
-  setTimeout(()=>{
-    audioConfetti.play().catch(()=>{});
-    // simple efecto visual: destellos
-    burst();
-  }, 1200);
+
+// ===================================
+// ABRIR SOBRE
+// ===================================
+
+
+sobre.addEventListener("click",()=>{
+
+
+    sobre.classList.add("abierto");
+
+
+
+    setTimeout(()=>{
+
+
+        libro.classList.add("activo");
+
+
+        escribirHistoria();
+
+
+
+        if(typeof confetti === "function"){
+
+
+            confetti({
+
+                particleCount:180,
+
+                spread:100,
+
+                origin:{
+                    y:.6
+                }
+
+            });
+
+
+        }
+
+
+
+    },900);
+
+
+
 });
 
-function burst(){
-  const body = document.body;
-  const frag = document.createDocumentFragment();
-  for(let i=0;i<18;i++){
-    const el = document.createElement('span');
-    el.className = 'burst';
-    el.style.position = 'fixed';
-    el.style.left = (50 + (Math.random()*40-20)) + '%';
-    el.style.top = (45 + (Math.random()*30-15)) + '%';
-    el.style.width = el.style.height = (6 + Math.random()*10) + 'px';
-    el.style.background = `hsl(${Math.floor(Math.random()*360)} 80% 60%)`;
-    el.style.borderRadius = '50%';
-    el.style.opacity = '0.95';
-    el.style.transform = `translate(-50%,-50%) scale(0.3)`;
-    el.style.transition = 'transform 900ms cubic-bezier(.2,.8,.2,1), opacity 900ms linear';
-    frag.appendChild(el);
-    requestAnimationFrame(()=>{
-      el.style.transform = `translate(-50%,-50%) translate(${(Math.random()*300-150)}px,${(Math.random()*300-150)}px) scale(1)`;
-      el.style.opacity = '0';
+
+
+
+
+
+// ===================================
+// ESCRITURA MÁQUINA
+// ===================================
+
+
+function escribirHistoria(){
+
+
+    historia.innerHTML="";
+
+
+    let letra=0;
+
+
+    const maquina=setInterval(()=>{
+
+
+        historia.innerHTML +=
+        textoHistoria.charAt(letra);
+
+
+
+        letra++;
+
+
+
+        if(letra >= textoHistoria.length){
+
+
+            clearInterval(maquina);
+
+
+        }
+
+
+    },45);
+
+
+
+}
+
+
+
+
+
+
+// ===================================
+// BOTÓN FINAL
+// ===================================
+
+
+continuar.addEventListener("click",()=>{
+
+
+    continuar.innerHTML=
+    "🍓 Preparando sorpresa...";
+
+
+
+    setTimeout(()=>{
+
+
+        invitacionFinal.classList.add("activa");
+
+
+
+        if(typeof confetti === "function"){
+
+
+            confetti({
+
+                particleCount:200,
+
+                spread:120,
+
+                origin:{
+                    y:.5
+                }
+
+            });
+
+
+        }
+
+
+
+    },1000);
+
+
+
+});
+
+
+
+
+
+
+
+// ===================================
+// CREAR ESCENARIO
+// ===================================
+
+
+function crearEscenario(){
+
+
+    crearNubes(10);
+
+    crearArboles();
+
+    crearArbustos();
+
+    crearHongos();
+
+
+}
+
+
+
+
+
+
+
+// ===================================
+// NUBES
+// ===================================
+
+
+function crearNubes(cantidad){
+
+
+    for(let i=0;i<cantidad;i++){
+
+
+        const nube=document.createElement("div");
+
+
+        nube.className="nube";
+
+
+        nube.innerHTML="☁️";
+
+
+        nube.style.left=
+        Math.random()*100+"vw";
+
+
+        nube.style.top=
+        Math.random()*45+"vh";
+
+
+
+        nube.style.animationDelay=
+        (-Math.random()*20)+"s";
+
+
+
+        decoracion.appendChild(nube);
+
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+// ===================================
+// ÁRBOLES
+// ===================================
+
+
+function crearArboles(){
+
+
+    const posiciones=[
+        5,18,35,52,70,86
+    ];
+
+
+
+    posiciones.forEach((pos,i)=>{
+
+
+        const arbol=
+        document.createElement("div");
+
+
+
+        arbol.className="arbol";
+
+
+        arbol.innerHTML="🌳";
+
+
+
+        arbol.style.left=
+        pos+"vw";
+
+
+
+        arbol.style.fontSize=
+        (80 + i*8)+"px";
+
+
+
+        decoracion.appendChild(arbol);
+
+
+
     });
-    setTimeout(()=>el.remove(),1000);
-  }
-  body.appendChild(frag);
+
+
+
+}
+
+
+
+
+
+
+
+// ===================================
+// ARBUSTOS
+// ===================================
+
+
+function crearArbustos(){
+
+
+    for(let i=0;i<12;i++){
+
+
+        const arbusto=
+        document.createElement("div");
+
+
+
+        arbusto.className="arbusto";
+
+
+        arbusto.innerHTML="🌿";
+
+
+
+        arbusto.style.left=
+        (i*8)+"vw";
+
+
+
+        decoracion.appendChild(arbusto);
+
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+// ===================================
+// HONGOS
+// ===================================
+
+
+function crearHongos(){
+
+
+    [10,25,45,65,82,90]
+    .forEach(pos=>{
+
+
+        const hongo=
+        document.createElement("div");
+
+
+        hongo.className="hongo";
+
+
+        hongo.innerHTML="🍄";
+
+
+        hongo.style.left=
+        pos+"vw";
+
+
+
+        decoracion.appendChild(hongo);
+
+
+
+    });
+
+
+
 }
