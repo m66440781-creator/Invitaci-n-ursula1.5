@@ -453,3 +453,132 @@ function crearHongos(){
 
 
 }
+
+// ===================================
+// FLORES
+// ===================================
+
+function crearFlores(cantidad){
+
+    for(let i=0;i<cantidad;i++){
+
+        const flor=document.createElement("div");
+
+        flor.className="flor";
+
+        flor.innerHTML="🌸";
+
+        flor.style.left=Math.random()*100+"vw";
+
+        flor.style.animationDuration=
+        (8+Math.random()*8)+"s";
+
+        flor.style.animationDelay=
+        Math.random()*5+"s";
+
+        decoracion.appendChild(flor);
+
+    }
+
+}
+
+
+
+// ===================================
+// FRESAS CAYENDO
+// ===================================
+
+function crearFresas(cantidad){
+
+    for(let i=0;i<cantidad;i++){
+
+        const fresa=document.createElement("div");
+
+        fresa.className="fresaCaida";
+
+        fresa.innerHTML="🍓";
+
+
+        fresa.style.left=
+        Math.random()*100+"vw";
+
+
+        fresa.style.animationDuration=
+        (10+Math.random()*8)+"s";
+
+
+        fresa.style.animationDelay=
+        Math.random()*6+"s";
+
+
+        decoracion.appendChild(fresa);
+
+    }
+
+}
+
+
+
+
+// ===================================
+// MARIPOSAS
+// ===================================
+
+function crearMariposas(cantidad){
+
+    for(let i=0;i<cantidad;i++){
+
+        const mariposa=document.createElement("div");
+
+
+        mariposa.className="mariposa";
+
+
+        mariposa.innerHTML="🦋";
+
+
+        mariposa.style.top=
+        Math.random()*70+"vh";
+
+
+        mariposa.style.animationDelay=
+        (i*2)+"s";
+
+
+        decoracion.appendChild(mariposa);
+
+    }
+
+}
+
+
+
+
+
+// ===================================
+// ESTRELLAS
+// ===================================
+
+function crearEstrellas(cantidad){
+
+    for(let i=0;i<cantidad;i++){
+
+        const estrella=document.createElement("div");
+
+
+        estrella.className="estrella";
+
+
+        estrella.style.left=
+        Math.random()*100+"vw";
+
+
+        estrella.style.top=
+        Math.random()*100+"vh";
+
+
+        decoracion.appendChild(estrella);
+
+    }
+
+}
