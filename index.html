@@ -1,47 +1,241 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Invitación — Úrsula 1.5</title>
-  <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Úrsula Nazareth | Mis 4 añitos 🍓</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
 </head>
+
+
 <body>
-  <main class="container">
-    <header>
-      <h1>Estás invitad@</h1>
-      <p class="subtitle">Úrsula 1.5 — Una celebración mágica</p>
-    </header>
 
-    <section class="card">
-      <img id="ursula-img" src="img/ursula.png" alt="Úrsula" />
 
-      <div class="content">
-        <p class="lead">Pulsa <strong>Abrir</strong> cuando estés list@ para comenzar la sorpresa.</p>
+<!-- =========================
+        BIENVENIDA
+========================= -->
 
-        <div class="controls">
-          <button id="open-btn" class="btn">Abrir</button>
-          <button id="music-btn" class="btn secondary">Reproducir música</button>
-        </div>
+<div id="loader">
 
-        <div id="message" class="hidden">
-          <h2>¡Sorpresa!</h2>
-          <p>Gracias por acompañarnos. Que la magia empiece ✨</p>
-        </div>
-      </div>
-    </section>
 
-    <footer>
-      <small>Diseño: Invitación Úrsula 1.5</small>
-    </footer>
-  </main>
+<div class="bienvenida">
 
-  <!-- Elementos de audio (subir los archivos a audio/) -->
-  <audio id="musica" src="audio/musica.mp3" preload="none"></audio>
-  <audio id="abrir" src="audio/abrir.mp3" preload="none"></audio>
-  <audio id="magia" src="audio/magia.mp3" preload="none"></audio>
-  <audio id="confetti" src="audio/confetti.mp3" preload="none"></audio>
 
-  <script src="script.js"></script>
+<h1 class="nombreBienvenida">
+Úrsula Nazareth
+</h1>
+
+
+<img 
+src="img/ursula.png"
+class="foto-ursula"
+alt="Úrsula">
+
+
+<div class="textoBienvenida">
+
+<p>
+🍓 Hola, soy Úrsula Nazareth 🍓✨
+<br>
+Y tengo una sorpresa muy especial para ti...
+</p>
+
+</div>
+
+
+</div>
+
+
+<div id="fresaInicio">
+🍓
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- =========================
+        ESCENARIO PRINCIPAL
+========================= -->
+
+
+<div id="contenido">
+
+
+<div class="fondo"></div>
+
+
+<!-- CAPAS DEL BOSQUE -->
+
+
+<div id="nubes"></div>
+
+
+<div id="arboles"></div>
+
+
+<div id="decoracion">
+
+
+<div class="flores"></div>
+
+
+</div>
+
+
+
+<div class="suelo"></div>
+
+
+<div id="primerPlano"></div>
+
+
+
+
+
+<!-- =========================
+             SOBRE
+========================= -->
+
+
+<div 
+class="sobre"
+id="sobre">
+
+
+<div class="tapa"></div>
+
+
+<div class="carta">
+
+
+<div class="sello">
+🍓
+</div>
+
+
+<h2>
+Tócame
+</h2>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- =========================
+             LIBRO
+========================= -->
+
+
+<div id="libro">
+
+
+<div class="pagina">
+
+
+<h1>
+Había una vez...
+</h1>
+
+
+<p id="historia"></p>
+
+
+
+<button id="continuar">
+Abrir Invitación
+</button>
+
+
+
+</div>
+
+
+
+
+
+<!-- =========================
+        INVITACIÓN FINAL
+========================= -->
+
+
+<div id="invitacionFinal">
+
+
+<h1>
+🍓 Úrsula Nazareth 🍓
+</h1>
+
+
+<h2>
+Mis 4 añitos
+</h2>
+
+
+<p>
+🎂 Te espero para celebrar un día lleno de magia y alegría.
+</p>
+
+
+<p>
+📅 16 de agosto
+</p>
+
+
+<p>
+🕡 6:30 PM
+</p>
+
+
+<p>
+📍 Capilla Coronillas
+</p>
+
+
+
+<p class="mensaje">
+
+"Tu presencia será el regalo más dulce 🍓✨,
+pero si deseas consentirme con un detallito,
+también me hará muy feliz. 💕"
+
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<script src="script.js"></script>
+
+
 </body>
+
 </html>
