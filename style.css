@@ -1831,30 +1831,77 @@ body{
 
 }
 
-#cuentaRegresiva span{
+/* ================================
+   CUENTA REGRESIVA
+================================ */
+
+#cuentaRegresiva{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:12px;
+
+    transform:translateX(-50%);
 
     display:flex;
 
-    align-items:center;
+    gap:6px;
 
-    justify-content:center;
+    z-index:30;
 
-    min-width:55px;
+    padding:8px;
 
-    height:48px;
+    border-radius:22px;
 
-    padding:5px;
+    background:rgba(255,255,255,.92);
 
-    border-radius:14px;
+    border:3px solid #ffb6d5;
 
-    background:#fff5fa;
+    box-shadow:
+        0 0 15px rgba(255,105,180,.5),
+        0 5px 20px rgba(0,0,0,.15);
 
-    color:#d83d7a;
+}
 
-    font-size:16px;
+
+/* CADA CAJITA */
+
+#cuentaRegresiva div{
+
+    min-width:58px;
+
+    text-align:center;
+
+}
+
+
+/* NÚMERO */
+
+#cuentaRegresiva span{
+
+    display:block;
+
+    font-size:21px;
 
     font-weight:bold;
 
-    text-align:center;
+    color:#d83d7a;
+
+}
+
+
+/* TEXTO */
+
+#cuentaRegresiva small{
+
+    display:block;
+
+    margin-top:2px;
+
+    font-size:9px;
+
+    color:#8b6475;
 
 }
