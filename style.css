@@ -1905,3 +1905,63 @@ body{
     color:#8b6475;
 
 }
+
+/* ================================
+   AJUSTE FINAL CUENTA REGRESIVA
+================================ */
+
+#cuentaRegresiva{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:8px 10px;
+}
+
+/* CADA BLOQUE */
+#cuentaRegresiva div{
+    min-width:58px;
+    padding:5px 4px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.95);
+
+    border:2px solid #ffb6d5;
+    border-radius:14px;
+
+    box-shadow:
+        0 3px 8px rgba(255,105,180,.18);
+}
+
+/* NÚMERO */
+#cuentaRegresiva div span{
+    display:block;
+
+    font-size:21px;
+    line-height:23px;
+
+    font-weight:bold;
+    color:#d83d7a;
+
+    background:none;
+    border:none;
+    padding:0;
+}
+
+/* TEXTO */
+#cuentaRegresiva div small{
+    display:block;
+
+    margin-top:2px;
+
+    font-size:9px;
+    line-height:11px;
+
+    color:#8b6475;
+}
