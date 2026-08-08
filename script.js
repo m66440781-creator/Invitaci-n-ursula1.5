@@ -24,7 +24,11 @@ const continuar = document.getElementById("continuar");
 const invitacionFinal =
 document.getElementById("invitacionFinal");
 
+const musica = document.getElementById("musica");
+const sonidoSobre = document.getElementById("sonidoSobre");
 
+musica.volume = 0.35;
+sonidoSobre.volume = 0.60;
 
 
 // TEXTO DEL CUENTO
@@ -43,6 +47,7 @@ const textoHistoria =
 
 fresaInicio.addEventListener("click",()=>{
 
+ musica.play().catch(()=>{});
 
     if(typeof confetti === "function"){
 
@@ -97,7 +102,9 @@ fresaInicio.addEventListener("click",()=>{
 
 sobre.addEventListener("click",()=>{
 
-
+sonidoSobre.currentTime = 0;
+sonidoSobre.play().catch(()=>{});
+    
     sobre.classList.add("abierto");
 
 
